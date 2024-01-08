@@ -4,7 +4,9 @@ import { PlacesSection } from './sections/PlacesSection';
 import { EntitiesSection } from './sections/EntitiesSection';
 import { DocumentsSection } from './sections/DocumentsSection';
 import { SentimentAnalysisSection } from './sections/SentimentAnalysisSection';
-import { DateEntity, PlaceEntity, SimpleEntity, DocumentEntity, SentimentEntity } from './types';
+import { DateEntity, PlaceEntity, SimpleEntity, DocumentEntity, SentimentEntity, PersonEntity, KeywordsEntity } from './types';
+import { KeywordsResult } from './sections/keywords-result';
+import { PeopleResult } from './sections/people-result';
 
 export type PDFViewerProps = {
   dates: DateEntity[];
@@ -12,6 +14,8 @@ export type PDFViewerProps = {
   entities: SimpleEntity[];
   documents: DocumentEntity[];
   sentiments: SentimentEntity[];
+  people: PersonEntity[];
+  keywords: KeywordsEntity[];
 };
 
 export const PDFViewer: React.FC<PDFViewerProps> = ({
@@ -20,6 +24,8 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
   entities,
   documents,
   sentiments,
+  people,
+  keywords
 }) => {
   return (
     <div>
@@ -28,6 +34,8 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({
       <EntitiesSection entities={entities} />
       <DocumentsSection documents={documents} />
       <SentimentAnalysisSection sentiments={sentiments} />
+      <KeywordsResult keywords={keywords} />
+      <PeopleResult people={people} />
     </div>
   );
 };

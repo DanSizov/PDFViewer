@@ -21,3 +21,14 @@ export interface SentimentEntity {
   sentiment: string;
   appearances: number;
 }
+
+export interface KeywordsEntity {
+  keyword: string;
+  appearances: number;
+}
+
+export interface PersonEntity {
+  name: string;
+  photo: string;
+  apperances: number;
+}
