@@ -11,7 +11,7 @@ interface PeopleSectionProps {
   people: PersonEntity[];
 }
 
-export const PeopleResult: React.FC<PersonEntity> = ({people}) => {
+export const PeopleResult: React.FC<PeopleSectionProps> = ({people}) => {
   const classes = useStyles();
   const [currentPage, setCurrentPage] = useState(0);
   const personsPerPage = 10;

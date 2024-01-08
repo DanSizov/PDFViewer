@@ -1,6 +1,6 @@
 import React from 'react';
 import { PDFViewer } from './PDFViewer';
-import { DateEntity, PlaceEntity, SimpleEntity, DocumentEntity, SentimentEntity } from './types';
+import { DateEntity, PlaceEntity, SimpleEntity, DocumentEntity, SentimentEntity, PersonEntity, KeywordsEntity } from './types';
 
 const mockDates: DateEntity[] = [
   { date: '2022-01-01', appearances: 10 },
@@ -28,6 +28,16 @@ const mockDocuments: DocumentEntity[] = [
   { name: 'File name.wav', type: 'wav' },
 ];
 
+const mockPeople: PersonEntity[] = [
+  { name: 'John', photo: '', apperances: 2 },
+  { name: 'Jane', photo: '', apperances: 3 },
+];
+
+const mockKeywords: KeywordsEntity[] = [
+  { keyword: 'keyword1', appearances: 1 },
+  { keyword: 'keyword2', appearances: 2 },
+];
+
 const App: React.FC = () => {
 
   return (
@@ -38,6 +48,8 @@ const App: React.FC = () => {
         entities={mockEntities}
         documents={mockDocuments}
         sentiments={mockSentiments}
+        people={mockPeople}
+        keywords={mockKeywords}
       />
     </div>
   );

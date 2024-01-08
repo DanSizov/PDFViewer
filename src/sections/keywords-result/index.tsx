@@ -11,7 +11,7 @@ interface KeywordsSectionProps {
   keywords: KeywordsEntity[];
 }
 
-export const KeywordsResult: React.FC<KeywordsEntity> = ({keywords}) => {
+export const KeywordsResult: React.FC<KeywordsSectionProps> = ({keywords}) => {
   const classes = useStyles();
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 10;
